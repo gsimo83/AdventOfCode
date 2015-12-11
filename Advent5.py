@@ -4,9 +4,9 @@ def ControlloVocali(riga):
     n_vocali=0
     n_vocali=riga.count('a')+riga.count('e')+riga.count('i')+riga.count('o')+riga.count('u')
     if n_vocali>=3:
-        return 'true'
+        return True
     else:
-        return 'false'
+        return False
 
 def ControlloDoppia(riga):
     n_doppie=0
@@ -18,32 +18,32 @@ def ControlloDoppia(riga):
             break
         j+=1
     if n_doppie>0:
-        return 'true'
-    return 'false'
+        return True
+    return False
 
 def ControlloEsclusi(riga):
-    esclusioni='true'
+    esclusioni=True
     if riga.count('ab')>0 or riga.count('cd')>0 or riga.count('pq')>0 or riga.count('xy')>0:
-        esclusioni='false'
+        esclusioni=False
     return esclusioni
 
 def ControllaSuccessive(riga):
-    successive='false'
+    successive=False
     i=len(riga)-3
     j=0
     while j<i:
         if riga[j]==riga[j+2]:
-            successive='true'
+            successive=True
         j+=1
     return successive
 
 def ControllaCoppie(riga):
-    coppie='false'
+    coppie=False
     i=len(riga)-3
     j=0
     while j<i:
         if riga[j:j+2] in riga[j+2:]:
-            coppie='true'
+            coppie=True
         j+=1
     return coppie
 
@@ -69,11 +69,11 @@ for riga in file:
     print("Caso 1 - Test esclusioni : ",flg_esclusi)
     print("Caso 2 - Test ripetizioni : ",flg_pair)
     print("Caso 1 - Test caratteri successivi : ",flg_following)
-    if flg_vocali=='true' and flg_doppie=='true' and flg_esclusi=='true':
+    if flg_vocali==True and flg_doppie==True and flg_esclusi==True:
         nice_rows+=1
     else:
         nought_rows+=1
-    if flg_pair=='true' and flg_following=='true':
+    if flg_pair==True and flg_following==True:
         nice_rows2+=1
     else:
         nought_rows2+=1
