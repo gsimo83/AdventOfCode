@@ -15,5 +15,5 @@ with open("input_es1.txt",'r') as fp:
                 piano-=1
             if piano==-1:
                 pos_piano=posizione
-print("Alla fine Santa Claus si trova al piano n°: ",piano)
+print("Alla fine Santa Klaus si trova al piano n°: ",piano)
 print("Era al piano -1 alla posizione: ",pos_piano)
